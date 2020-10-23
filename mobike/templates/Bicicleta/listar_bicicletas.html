@@ -1,23 +1,40 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Listar bicicletas</title>
-  </head>
+{% extends 'base.html' %}
 
-  <body>
-    <h2>Lista de bicicletas</h2>
-
-    {% for b in bicicletas %}
-        <div>
-            <p>Marca: {{ b.marca }} </p>
-            <p>Modelo: {{ b.modelo }} </p>
-            <p>Mantención: {{ b.mantencion }} </p>
+{% block content %}
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title ">Listado de bicicletas</h4>
+        <p class="card-category">bicicletas registradas en el sistema</p>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>ID</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Mantención</th>
+            </thead>
+            <tbody>
+               {% for b in bicicletas %}
+               <tr>
+                 <td>{{ b.id }}</td>
+                 <td>{{ b.marca }}</td>
+                 <td>{{ b.modelo }}</td>
+                 <td>{{ b.mantencion }}</td>
+                 <td>Editar</td>
+                 <td>Eliminar</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
         </div>
-        <br>
-    {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
 
-  </body>
-</html>
+
+   
