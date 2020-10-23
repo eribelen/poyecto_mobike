@@ -12,16 +12,7 @@ COMUNA_CHOICES = [
 class Bicicleta(models.Model):
     marca = models.CharField(max_length=15)
     modelo = models.CharField(max_length=20)
-    mantencion = models.BooleanField(choices=MENTENCION_CHOICE, default=1, blank=False)
+    mantencion = models.BooleanField(choices=MENTENCION_CHOICE, default=1)
 
     def __str__(self):
         return self.marca
-
-class Estacionamiento(models.Model):
-    bicicleta = models.ForeignKey(Bicicleta, null=True, blank=True, on_delete=models.CASCADE)
-    comuna = models.CharField(max_length=15, choices=COMUNA_CHOICES, default=0)
-    bicicletasDisponibles = models.IntegerField()
-    direccion = models.TextField()
-
-    def __str__(self):
-        return self.comuna
