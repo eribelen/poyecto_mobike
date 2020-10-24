@@ -6,7 +6,7 @@ urlpatterns = [
     path('listar_bicicletas', views.listar_bicicletas, name="listar_bicicletas"),
     
     # agregar una carrera    
-    path('agregar_bicicleta', views.agregar_bicicleta, name="agregar_bicileta"),
+    path('agregar_bicicleta', views.agregar_bicicleta, name="agregar_bicicleta"),
 
     # editar una carrera
     path('editar_bicicleta/<int:bicicleta_id>', views.editar_bicicleta ,name="editar_bicicleta"),
