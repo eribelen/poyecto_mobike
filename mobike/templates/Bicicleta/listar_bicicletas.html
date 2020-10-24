@@ -24,10 +24,34 @@
                  <td>{{ b.marca }}</td>
                  <td>{{ b.modelo }}</td>
                  <td>{{ b.mantencion }}</td>
-                 <td>Editar</td>
-                 <td>Eliminar</td>
+                 <td><a href="{% url 'editar_bicicleta' b.id %}">Editar</a></td>
+                 <td>
+                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{b.id}}">
+                     Eliminar
+                    </button>
+                  </td>
                 </tr>
-                {% endfor %}
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal{{b.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{b.id}}" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                         <h5 class="modal-title" id="exampleModalLabel{{b.id}}">Modal title</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Esta seguro que desea eliminar bicicleta {{b.id}}
+                        </div>
+                        <div class="modal-footer">
+                          <a href="{% url 'listar_bicicletas' %}">Cerrar</a> 
+                          <a href="{% url 'borrar_bicicleta' b.id %}">Eliminar</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
             </tbody>
           </table>
         </div>

@@ -13,7 +13,7 @@ def agregar_bicicleta(request):
         if form.is_valid():
             model_instance = form.save(commit=False)
             model_instance.save()
-            return redirect("/agregar_bicicleta")
+            return redirect("/listar_bicicletas")
     else:
         form = BicicletaForm()
         return render(request, "Bicicleta/agregar_bicicleta.html", {'form': form})
@@ -44,6 +44,7 @@ def editar_bicicleta(request, bicicleta_id):
             instancia = form.save(commit=False)
             # Podemos guardar cuando queramos
             instancia.save()
+            return redirect('listar_bicicletas')
 
     # Si llegamos al final renderizamos el formulario
     return render(request, "Bicicleta/editar_bicicleta.html", {'form': form})
