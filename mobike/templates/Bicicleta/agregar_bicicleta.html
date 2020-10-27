@@ -1,22 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h4 class="card-title">Agregar Bicicleta</h4>
- <p class="card-category">Complete los siguientes campos</p>
-
-<form method="POST">
-{% csrf_token %}
-{{ form.as_table }}
-<button type="submit" class="btn btn-primary pull-right">GUARDAR</button>
-<div class="clearfix"></div>
-</form>
-
-<div class="col-12">
-<ul class="nav justify-content-end">
-<li><a class="btn btn-primary" href="{% url 'listar_bicicletas' %}">Listar todas las bicicletas</a></li>
-<li><a class="btn btn-primary" href="javascript:history.go(-1)">Volver</a></li>
-</ul>
-
+<div class="row">
+    <div class="col-12">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Agregar Bicicleta</h1>
+                <p class="lead">Complete los siguientes campos</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-9">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <button type="submit" class="btn btn-primary fa-pull-right mt-2">GUARDAR</button>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+    <div class="col-3">
+        <ul class="mt-4 nav flex-column">
+            <li class="mt-2"><a class="btn btn-primary" href="{% url 'listar_bicicletas' %}">Listar todas las bicicletas</a></li>
+            <li class="mt-2"><a class="btn btn-primary" href="javascript:history.go(-1)">Volver</a></li>
+        </ul>
+    </div>
+</div>
 {% endblock %}
 
 

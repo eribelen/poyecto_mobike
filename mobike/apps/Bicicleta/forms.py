@@ -13,7 +13,7 @@ class BicicletaForm(forms.ModelForm):
             'mantencion': 'Mantención',
         }
         widgets = {
-            'marca': forms.TextInput(attrs={'class': 'form-control'}),
-            'modelo': forms.TextInput(attrs={'class': 'form-control'}),
-            'mantencion': forms.Select(choices=MENTENCION_CHOICE, attrs={'class': 'form-control'}),
+            'marca': forms.TextInput(attrs={'class': 'mb-2 form-control'}),
+            'modelo': forms.TextInput(attrs={'class': 'mb-2 form-control'}),
+            'mantencion': forms.Select(choices=MENTENCION_CHOICE, attrs={'class': 'mb-2 form-control'}),
         }
