@@ -20,18 +20,19 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-1">
-                <nav class="nav flex-column">
-                    <a class="nav-link" href="#">Inicio</a>
-                    <!--active-->
-                    <!-- <a class="nav-link" href="#">Usuarios</a>-->
-                    <a class="nav-link" href="#">Bicicletas</a>
-                    <!-- <a class="nav-link" href="#">Estacionamientos</a>
-                <a class="nav-link" href="#">Tarjetas</a> -->
-                    <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
-                </nav>
+            <div class="col-2 p-0">
+                <div class="cont-nav">
+                    <nav class="nav flex-column bg-dark">
+                        <!-- <a class="nav-link pl-5 active" href="#">Inicio</a>
+                        <a class="nav-link pl-5" href="#">Usuarios</a>-->
+                        <a class="nav-link pl-5" href="{% url 'listar_bicicletas' %}">Bicicletas</a>
+                        <!-- <a class="nav-link pl-5" href="#">Estacionamientos</a>
+                    <a class="nav-link pl-5" href="#">Tarjetas</a> -->
+                        <!-- <a class="nav-link pl-5 disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+                    </nav>
+                </div>
             </div>
-            <div class="col-11">
+            <div class="col-10">
                 <div class="container">
                     {% block content %} {% endblock %}
                 </div>

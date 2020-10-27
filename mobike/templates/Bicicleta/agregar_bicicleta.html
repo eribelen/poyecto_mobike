@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
     <div class="col-12">
-        <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron jumbotron-fluid mt-4">
             <div class="container">
                 <h1 class="display-4">Agregar Bicicleta</h1>
                 <p class="lead">Complete los siguientes campos</p>
@@ -14,7 +14,7 @@
         <form method="POST">
             {% csrf_token %}
             {{ form.as_table }}
-            <button type="submit" class="btn btn-primary fa-pull-right mt-2">GUARDAR</button>
+            <button type="submit" class="btn btn-primary fa-pull-right">GUARDAR</button>
             <div class="clearfix"></div>
         </form>
     </div>

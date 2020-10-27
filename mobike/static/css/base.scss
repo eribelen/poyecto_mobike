@@ -1,3 +1,29 @@
 .dropdown-menu {
     left: -50px;
 }
+.navbar {
+    &.bg-dark {
+        z-index: 1;
+    }
+}
+
+.cont-nav {
+    width: 100%;
+    height: calc(100vh - 56px);
+    box-shadow: 0px 6px 30px -15px black;
+    background-color: #343a40;
+    nav {
+        a {
+            color: white;
+            &:hover {
+                background-color: lightgray;
+                color: black;
+                text-decoration: underline;
+            }
+            &.active {
+                background-color: lightgray;
+                color: black;
+            }
+        }
+    }
+}
