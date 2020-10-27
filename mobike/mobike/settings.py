@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.Mobike',
     'apps.Bicicleta',
+    'apps.Estacionamiento',
 ]
 
 MIDDLEWARE = [

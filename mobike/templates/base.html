@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title> AdminMobike </title>
+    <title>{% block titulo_principal %}{% endblock %} | AdminMobike </title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
@@ -15,7 +15,10 @@
 
 </head>
 
+{% block clase_principal %}
 <body>
+{% endblock %}
+
     {% include 'includes/header.html' %}
 
     <div class="container-fluid">
@@ -23,16 +26,16 @@
             <div class="col-2 p-0">
                 <div class="cont-nav">
                     <nav class="nav flex-column bg-dark">
-                        <!-- <a class="nav-link pl-5 active" href="#">Inicio</a>
-                        <a class="nav-link pl-5" href="#">Usuarios</a>-->
-                        <a class="nav-link pl-5" href="{% url 'listar_bicicletas' %}">Bicicletas</a>
-                        <!-- <a class="nav-link pl-5" href="#">Estacionamientos</a>
-                    <a class="nav-link pl-5" href="#">Tarjetas</a> -->
+                        <!--<a class="nav-link pl-5 active" href="#">Inicio</a>-->
+                        <a class="nav-link pl-5 active-usuarios" href="#">Usuarios</a>
+                        <a class="nav-link pl-5 active-biciletas" href="{% url 'listar_bicicletas' %}">Bicicletas</a>
+                        <a class="nav-link pl-5 active-estacionamientos" href="#">Estacionamientos</a>
+                        <a class="nav-link pl-5 active-tarjetas" href="#">Tarjetas</a>
                         <!-- <a class="nav-link pl-5 disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
                     </nav>
                 </div>
             </div>
-            <div class="col-10">
+            <div class="col-10 cont-static">
                 <div class="container">
                     {% block content %} {% endblock %}
                 </div>
