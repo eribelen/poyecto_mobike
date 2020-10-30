@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{% block titulo_principal %}Agregar Bicicleta{% endblock %}
+{% block titulo_principal %}Agregar Estacionamiento{% endblock %}
 
 {% block clase_principal %}
-<body class="bicicletas">
+<body class="estacionamientos">
 {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
     <div class="col-12">
         <div class="jumbotron jumbotron-fluid mt-4">
             <div class="container">
-                <h1 class="display-4">Agregar Bicicleta</h1>
+                <h1 class="display-4">Agregar Estacionamiento</h1>
                 <p class="lead">Complete los siguientes campos</p>
             </div>
         </div>
@@ -25,7 +25,7 @@
     </div>
     <div class="col-3">
         <ul class="mt-4 nav flex-column">
-            <li class="mt-2"><a class="btn btn-primary" href="{% url 'listar_bicicletas' %}">Listar todas las bicicletas</a></li>
+            <li class="mt-2"><a class="btn btn-primary" href="{% url 'listar_estacionamientos' %}">Listar los estacionamientos</a></li>
             <li class="mt-2"><a class="btn btn-primary" href="javascript:history.go(-1)">Volver</a></li>
         </ul>
     </div>

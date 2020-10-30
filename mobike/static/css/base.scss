@@ -20,6 +20,18 @@ body {
             }
         }
     }
+    &.estacionamientos {
+        .cont-nav {
+            nav {
+                a {
+                    &.active-estacionamientos  {
+                        background-color: lightgray;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .cont-nav {

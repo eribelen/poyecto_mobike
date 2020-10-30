@@ -13,7 +13,7 @@ def agregar_estacionamiento(request):
         if form.is_valid():
             model_instance = form.save(commit=False)
             model_instance.save()
-            return redirect("/listar_estacionamientos")
+            return redirect("listar_estacionamientos")
     else:
         form = EstacionamientoForm()
         return render(request, "Estacionamiento/agregar_estacionamiento.html", {'form': form})

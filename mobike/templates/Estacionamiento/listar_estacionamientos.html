@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block titulo_principal %}Listar Bicicletas{% endblock %}
+{% block titulo_principal %}Listar Estacionamientos{% endblock %}
 
 {% block clase_principal %}
 <body class="estacionamientos">
@@ -10,44 +10,44 @@
     <div class="col-12">
         <div class="jumbotron jumbotron-fluid mt-4">
             <div class="container">
-                <h1 class="display-4">Listado de bicicletas</h1>
-                <p class="lead">Bicicletas registradas en el sistema</p>
+                <h1 class="display-4">Listado de estacionamientos</h1>
+                <p class="lead">Estacionamientos registrados en el sistema</p>
             </div>
         </div>
         <table class="table">
             <thead>
                 <th>ID</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Mantención</th>
+                <th>Comuna</th>
+                <th>Dirección</th>
+                <th>Bicicletas disponibles</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
             </thead>
             <tbody>
-                {% for b in bicicletas %}
+                {% for e in estacionamientos %}
                 <tr>
-                    <td>{{ b.id }}</td>
-                    <td>{{ b.marca }}</td>
-                    <td>{{ b.modelo }}</td>
-                    <td>{{ b.mantencion }}</td>
-                    <td class="text-center"><a class="btn btn-primary" href="{% url 'editar_bicicleta' b.id %}">Editar</a></td>
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.comuna }}</td>
+                    <td>{{ e.direccion }}</td>
+                    <td>{{ e.bicicletasDisponibles }}</td>
+                    <td class="text-center"><a class="btn btn-primary" href="{% url 'editar_estacionamiento' e.id %}">Editar</a></td>
                     <td class="text-center">
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{b.id}}">Eliminar</button></td>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{e.id}}">Eliminar</button></td>
                 </tr>
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal{{b.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{b.id}}" aria-hidden="true">
+                <div class="modal fade" id="exampleModal{{e.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{e.id}}" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel{{b.id}}">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel{{e.id}}">Eliminar Estacionamiento</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <div class="modal-body">Esta seguro que desea eliminar bicicleta {{b.id}}</div>
+                            <div class="modal-body">Esta seguro que desea eliminar bicicleta {{e.id}}</div>
                             <div class="modal-footer">
-                                <a href="{% url 'listar_bicicletas' %}">Cerrar</a> 
-                                <a href="{% url 'borrar_bicicleta' b.id %}">Eliminar</a>
+                                <a href="{% url 'listar_estacionamientos' %}">Cerrar</a> 
+                                <a href="{% url 'borrar_estacionamiento' e.id %}">Eliminar</a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
     </div>
     <div class="col-12">
         <ul class="nav justify-content-end">
-            <li><a class="btn btn-primary" href="{% url 'agregar_bicicleta' %}">Agregar nueva bicicleta</a></li>
+            <li><a class="btn btn-primary" href="{% url 'agregar_estacionamiento' %}">Agregar nuevo estacionamiento</a></li>
         </ul>
     </div>
 </div>

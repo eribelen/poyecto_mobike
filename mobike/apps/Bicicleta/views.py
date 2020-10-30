@@ -13,7 +13,7 @@ def agregar_bicicleta(request):
         if form.is_valid():
             model_instance = form.save(commit=False)
             model_instance.save()
-            return redirect("/listar_bicicletas")
+            return redirect("listar_bicicletas")
     else:
         form = BicicletaForm()
         return render(request, "Bicicleta/agregar_bicicleta.html", {'form': form})
