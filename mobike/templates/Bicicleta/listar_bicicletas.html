@@ -20,6 +20,7 @@
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Mantención</th>
+                <th>Estacionamiento</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
             </thead>
@@ -30,6 +31,7 @@
                     <td>{{ b.marca }}</td>
                     <td>{{ b.modelo }}</td>
                     <td>{{ b.mantencion }}</td>
+                    <td>{{ b.estacionamiento }}</td>
                     <td class="text-center"><a class="btn btn-primary" href="{% url 'editar_bicicleta' b.id %}">Editar</a></td>
                     <td class="text-center">
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{b.id}}">Eliminar</button></td>
