@@ -2165,7 +2165,7 @@ a:hover.back-to-top {
 	}
 
 	.basic-2 h2 {
-		width: 20rem;
+		width: 25rem;
 	}
 	/* end of details 1 */
 
@@ -2263,3 +2263,7 @@ a:hover.back-to-top {
 	/* end of extra pages */
 }
 /* end of min-width 1200px */
+
+.bg-2 {
+	background-color: #2f2c3d;
+}

@@ -11,3 +11,6 @@ body.estacionamientos .cont-nav nav a.active-estacionamientos { background-color
 .cont-nav nav a.active { background-color: lightgray; color: black; }
 
 .cont-static { overflow: scroll; height: calc(100vh - 56px); }
+
+.img-cont { width: 100%; }
+.img-cont img { width: 100%; }

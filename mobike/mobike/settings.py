@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.Usuario',
     'apps.Bicicleta',
     'apps.Estacionamiento',
 ]
@@ -125,9 +126,7 @@ STATIC_ROOT = ''
 STATICFILES_DIRS = ( os.path.join('static'), )
 
 
-# Login 
+# Login
 
-'''
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
-'''
