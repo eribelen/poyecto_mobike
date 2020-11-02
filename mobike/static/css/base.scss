@@ -8,6 +8,18 @@
 }
 
 body {
+    &.home {
+        .cont-nav {
+            nav {
+                a {
+                    &.active-home  {
+                        background-color: lightgray;
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
     &.bicicletas {
         .cont-nav {
             nav {

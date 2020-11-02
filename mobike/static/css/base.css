@@ -2,6 +2,7 @@
 
 .navbar.bg-dark { z-index: 1; }
 
+body.home .cont-nav nav a.active-home { background-color: lightgray; color: black; }
 body.bicicletas .cont-nav nav a.active-biciletas { background-color: lightgray; color: black; }
 body.estacionamientos .cont-nav nav a.active-estacionamientos { background-color: lightgray; color: black; }
 
