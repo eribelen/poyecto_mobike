@@ -18,13 +18,13 @@
             <form method="POST">
                 {% csrf_token %} {{ form.as_p }}
                 <div class="form-group nav justify-content-end">
-                    <button class="btn btn-secondary" type="submit">GRABAR</button>
+                    <button class="btn btn-primary" type="submit">GRABAR</button>
                 </div>
             </form>
         </div>
         <div class="col-4">
             <ul class="nav navbar justify-content-center">
-                <li><a class="btn btn-primary" href="{% url 'login' %}">Iniciar Sesión</a></li>
+                <li><a class="btn btn-secondary" href="{% url 'login' %}">Iniciar Sesión</a></li>
             </ul>
         </div>
     </div>
