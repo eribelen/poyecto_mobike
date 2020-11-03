@@ -7,19 +7,16 @@
 <link rel="stylesheet" href="{% static 'css/registro.css' %}" type="text/css">
 {% endblock %}
 
-{% block header %}
-{% endblock %}
-
 {% block content %}
-<div id="registro" class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="jumbotron jumbotron-fluid mt-4">
+<div class="jumbotron jumbotron-fluid mt-4">
                 <div class="container">
                     <h1 class="display-4">Iniciar Sesión</h1>
                     <p class="lead">Inicio de Sesión de Mobike</p>
                 </div>
             </div>
+<div id="registro" class="container">
+    <div class="row">   
+        <div class="col-8">
             <form method="POST" id="formulario">
                 {% csrf_token %}
                 <div class="form-group">
@@ -42,16 +39,21 @@
                 
                 {{form.non_field_errors}}
         
-                <div class="form-group">
-                    <input class="btn" type="submit" value="Enviar"/>
+                <div class="form-group nav justify-content-end">
+                    <input class="btn btn-secondary" type="submit" value="Enviar"/>
                 </div>
                 
             </form>
         </div>
-        <div class="col-12">
-            <p>usuario de preba:</p>
-            <p>user: admin</p>
-            <p>pass: 12345678</p>
+        <div class="col-4">
+            <ul class="nav navbar justify-content-center">
+                <li><a class="btn btn-primary" href="{% url 'registrar' %}">Registrarse</a></li>
+            </ul>
+            <!--
+                Super usuario
+                usuario: admin
+                pass: 12345678
+            -->
         </div>
     </div>
 </div>

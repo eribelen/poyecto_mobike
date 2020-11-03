@@ -21,5 +21,4 @@ class EstacionamientoForm(forms.ModelForm):
             'comuna': forms.Select(choices=COMUNA_CHOICES, attrs={'class': 'mb-2 form-control'}),
             'direccion': forms.TextInput(attrs={'class': 'mb-2 form-control'}),
             'bicicletasDisponibles': forms.NumberInput(attrs={'class': 'mb-2 form-control'}),
-            
         }

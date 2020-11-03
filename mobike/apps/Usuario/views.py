@@ -9,7 +9,7 @@ class RegistroUsuario(CreateView):
     model = User
     template_name = "Usuario/registrar.html"
     form_class = RegistroForm
-    success_url = reverse_lazy('list_user')
+    success_url = reverse_lazy('home')
  
  
 class UserList(ListView):

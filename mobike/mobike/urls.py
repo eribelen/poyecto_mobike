@@ -26,6 +26,7 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('bicicleta/', include('apps.Bicicleta.urls')),
     path('estacionamiento/', include('apps.Estacionamiento.urls')),
+    path('usuario/', include('apps.Usuario.urls')),
 
     # Loggin
     path('login/', LoginView.as_view(redirect_authenticated_user=True,template_name='Usuario/login.html'), name='login'),
