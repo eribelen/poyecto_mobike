@@ -1,8 +1,6 @@
 from django import forms
 from .models import Bicicleta
 
-MENTENCION_CHOICE = [(1,'Si'),(2,'No')]
-
 class BicicletaForm(forms.ModelForm):
     class Meta:
         model = Bicicleta
@@ -16,6 +14,6 @@ class BicicletaForm(forms.ModelForm):
         widgets = {
             'marca': forms.TextInput(attrs={'class': 'mb-2 form-control'}),
             'modelo': forms.TextInput(attrs={'class': 'mb-2 form-control'}),
-            'mantencion': forms.Select(choices=MENTENCION_CHOICE, attrs={'class': 'mb-2 form-control'}),
-            'estacionamiento': forms.TextInput(attrs={'class': 'mb-2 form-control'}),
+            'mantencion': forms.Select(attrs={'class': 'mb-2 form-control'}),
+            'estacionamiento': forms.Select(attrs={'class': 'mb-2 form-control'}),
         }
