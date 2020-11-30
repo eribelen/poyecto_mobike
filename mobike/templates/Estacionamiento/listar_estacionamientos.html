@@ -30,9 +30,13 @@
                     <td>{{ e.comuna }}</td>
                     <td>{{ e.direccion }}</td>
                     <td>{{ e.bicicletasDisponibles }}</td>
-                    <td class="text-center"><a class="btn btn-primary" href="{% url 'editar_estacionamiento' e.id %}">Editar</a></td>
-                    <td class="text-center">
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{e.id}}">Eliminar</button></td>
+                    {% if user.is_staff %}
+                        <td class="text-center"><a class="btn btn-primary" href="{% url 'editar_estacionamiento' e.id %}">Editar</a></td>
+                        <td class="text-center">
+                        {% if user.is_superuser %}
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{e.id}}">Eliminar</button></td>
+                        {% endif %}
+                    {% endif %}
                 </tr>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal{{e.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{e.id}}" aria-hidden="true">

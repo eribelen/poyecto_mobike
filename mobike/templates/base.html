@@ -42,12 +42,29 @@
             <div class="col-2 p-0">
                 <div class="cont-nav">
                     <nav class="nav flex-column bg-dark">
-                        <a class="nav-link pl-5 active-home" href="{% url 'home' %}">Home</a>
-                        <a class="nav-link pl-5 active-usuarios" href="#">Usuarios</a>
-                        <a class="nav-link pl-5 active-biciletas" href="{% url 'listar_bicicletas' %}">Bicicletas</a>
-                        <a class="nav-link pl-5 active-estacionamientos" href="{% url 'listar_estacionamientos' %}">Estacionamientos</a>
-                        <a class="nav-link pl-5 active-tarjetas" href="#">Tarjetas</a>
-                        <!-- <a class="nav-link pl-5 disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+                        <a class="nav-link pl-4 active-home" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link pl-4 active-usuarios" href="#">Usuarios</a>
+                        {% if user.is_superuser %}
+                            <a class="nav-link pl-5 active-usuarios" href="#">Lista</a>
+                            <a class="nav-link pl-4 active-estacionamientos" href="#">Estacionamientos</a>
+                            <a class="nav-link pl-5 active-estacionamientos" href="{% url 'listar_estacionamientos' %}">Lista</a>
+                        {% endif %}
+                        <a class="nav-link pl-4 active-biciletas" href="#">Bicicletas</a>
+                        {% if user.is_superuser %}
+                            <a class="nav-link pl-5 active-biciletas" href="{% url 'listar_bicicletas' %}">Lista</a>
+                        {% endif %}
+                        {% if user.is_staff %}
+                            <a class="nav-link pl-4 active-tarjetas" href="#">Reportes</a>
+                        {% endif %}
+                        <a class="nav-link pl-4 active-tarjetas" href="#">Tarjetas</a>
+                        {% if user.is_staff %}
+                            <a class="nav-link pl-4 active-tarjetas" href="#">Viajes</a>
+                        {% endif %}
+
+                        {% if user.is_staff %}
+                        {% endif %}
+                        {% if user.is_superuser %}
+                        {% endif %}
                     </nav>
                 </div>
             </div>

@@ -7,6 +7,10 @@ def listar_bicicletas(request):
     bicicletas = Bicicleta.objects.all()
     return render(request, "Bicicleta/listar_bicicletas.html", {'bicicletas': bicicletas})
 
+def ver_bicicleta(request, bicicleta_id):
+    bicicleta = Bicicleta.objects.get(id=bicicleta_id)
+    return render(request, "Bicicleta/ver_bicicleta.html", {'bicicleta': bicicleta})
+
 def agregar_bicicleta(request):
     if request.method == "POST":
         form = BicicletaForm(request.POST)

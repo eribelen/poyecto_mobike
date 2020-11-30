@@ -7,6 +7,10 @@ def listar_estacionamientos(request):
     estacionamientos = Estacionamiento.objects.all()
     return render(request, "Estacionamiento/listar_estacionamientos.html", {'estacionamientos': estacionamientos})
 
+def ver_estacionamiento(request, estacionamiento_id):
+    estacionamiento = Estacionamiento.objects.get(id=estacionamiento_id)
+    return render(request, "Estacionamiento/ver_estacionamiento.html", {'estacionamiento': estacionamiento})
+
 def agregar_estacionamiento(request):
     if request.method == "POST":
         form = EstacionamientoForm(request.POST)

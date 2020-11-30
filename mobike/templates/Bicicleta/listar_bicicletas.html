@@ -32,9 +32,13 @@
                     <td>{{ b.modelo }}</td>
                     <td>{{ b.mantencion }}</td>
                     <td>{{ b.estacionamiento }}</td>
-                    <td class="text-center"><a class="btn btn-primary" href="{% url 'editar_bicicleta' b.id %}">Editar</a></td>
-                    <td class="text-center">
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{b.id}}">Eliminar</button></td>
+                    {% if user.is_staff %}
+                        <td class="text-center"><a class="btn btn-primary" href="{% url 'editar_bicicleta' b.id %}">Editar</a></td>
+                        <td class="text-center">
+                        {% if user.is_superuser %}
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{b.id}}">Eliminar</button></td>
+                        {% endif %}
+                    {% endif %}
                 </tr>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal{{b.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{b.id}}" aria-hidden="true">
